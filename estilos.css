@@ -7,6 +7,12 @@ body {
   background-color: #F0F0F0;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+body.oscuro {
+  background-color: #18191A;
 }
 
 .contenedor-web {
@@ -59,6 +65,79 @@ header .menu .lista-menu li a:hover {
   -webkit-transition: 0.3s ease all;
   transition: 0.3s ease all;
   color: #000;
+}
+
+header .modos {
+  background-color: #343d5b;
+  border-radius: 1000px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  outline: none;
+}
+
+header .modos::after {
+  content: "";
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  right: unset;
+  border-radius: 100px;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+header .modos.activo {
+  background-color: orange;
+  color: #000;
+}
+
+header .modos.activo::after {
+  left: unset;
+  right: 0;
+}
+
+header .modos span {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  display: block;
+  background: none;
+  color: #fff;
+  text-align: center;
+}
+
+body.oscuro header {
+  background-color: #242526;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+body.oscuro header .logo {
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+  color: #E4E6EB;
+}
+
+body.oscuro header .menu .lista-menu li a {
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+  color: rgba(228, 230, 235, 0.7);
+}
+
+body.oscuro header .menu .lista-menu li a:hover {
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+  color: #E4E6EB;
 }
 
 main {
@@ -145,6 +224,19 @@ main .tarjeta .botonera .btn.ver:hover {
   -webkit-transition: 0.3s ease all;
   transition: 0.3s ease all;
   background-color: #ACABAB;
+}
+
+body.oscuro main .tarjeta {
+  background-color: #242526;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+body.oscuro main .tarjeta .img-tarjeta img {
+  -webkit-box-shadow: 2px 2px 3px rgba(135, 135, 135, 0.4);
+          box-shadow: 2px 2px 3px rgba(135, 135, 135, 0.4);
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
 }
 
 footer {

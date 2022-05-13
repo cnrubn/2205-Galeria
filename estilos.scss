@@ -6,6 +6,13 @@ $btn-principalHover: #254BE6;
 $btn-secundarioHover: #ACABAB;
 $btn-texto: #fff;
 $texto: #000;
+
+// MODO OSCURO
+$oscuro-fondo: #18191A;
+$oscuro-elementos: #242526;
+$oscuro-texto: #E4E6EB;
+
+
 $fuente: 'Roboto', sans-serif;
 
 * {
@@ -17,6 +24,11 @@ body {
     background-color: $fondo;
     font-family: $fuente;
     font-size: 20px;
+    transition: 1s ease all;
+
+    &.oscuro {
+        background-color: $oscuro-fondo;
+    }
 }
 
 .contenedor-web {
@@ -43,15 +55,12 @@ header {
     .logo {
         color: $texto;
         flex-grow: 2;
-}
+    }
 
     .menu {
         
-
-
         .lista-menu {
             list-style: none;
-
 
             li {
                 float: left;
@@ -64,15 +73,85 @@ header {
                     &:hover {
                         transition: 0.3s ease all;
                         color: $texto;
-                }
+                    }
                 }
             }
 
         }
     }
 
+    // BOTÓN CAMBIO MODO OSCURO/CLARO
     .modos {
+        background-color: #343d5b;
+        border-radius: 1000px;
+        border: none;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        outline: none;
 
+        &::after {
+            content: "";
+            display: block;
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            background-color: #fff;
+            top: 0;
+            left: 0;
+            right: unset;
+            border-radius: 100px;
+            transition: 0.3s ease all;
+            box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        &.activo {
+            background-color: orange;
+            color: #000;
+
+            &::after {
+                left: unset;
+                right: 0;
+            }            
+        }
+
+        span {
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            display: block;
+            background: none;
+            color: #fff;
+            text-align: center;
+        }
+    }
+
+    // ACTIVAR MODO OSCURO EN BARRA DE NAVEGACIÓN
+    body.oscuro & {
+        background-color: $oscuro-elementos;
+        transition: 1s ease all;
+
+        .logo {
+            transition: 1s ease all;
+            color: $oscuro-texto;
+        }
+
+        .menu {       
+            .lista-menu {   
+                li {
+                    a {
+                        transition: 1s ease all;
+                        color: rgba($oscuro-texto, 0.7);
+    
+                        &:hover {
+                            transition: 1s ease all;
+                            color: $oscuro-texto;
+                        }
+                    }
+                }   
+            }
+        }
+        
     }
 }
 
@@ -95,7 +174,6 @@ main {
         align-items: flex-end;
         justify-content: center;
 
-
         .img-tarjeta {
             position: absolute;
             width: 100%;
@@ -115,8 +193,7 @@ main {
             width: calc(100% - 40px);
             display: flex;
             justify-content: space-between;
-            
-            
+              
             .btn {
                 cursor: pointer;
                 border-radius: 4px;
@@ -147,9 +224,21 @@ main {
             }
         }
 
+        // ACTIVAR MODO OSCURO EN BARRA DE NAVEGACIÓN
+        body.oscuro & {
+            background-color: $oscuro-elementos;
+            transition: 1s ease all;
+
+            .img-tarjeta {
+                img {
+                    box-shadow: 2px 2px 3px rgba(135, 135, 135, 0.4);   
+                    transition: 1s ease all;
+                }
+            }
+
+        }
 
     }
-
 
 }
 
@@ -200,8 +289,7 @@ footer {
                             color: #eee;                        
                         }
                     }
-    
-    
+       
                 }
             }
         }

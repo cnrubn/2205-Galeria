@@ -1,0 +1,211 @@
+$fondo: #F0F0F0;
+$fondo-elementos: #fff;
+$btn-principal: #3E5FEB;
+$btn-secundario: #C7C7C7;
+$btn-principalHover: #254BE6;
+$btn-secundarioHover: #ACABAB;
+$btn-texto: #fff;
+$texto: #000;
+$fuente: 'Roboto', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $fondo;
+    font-family: $fuente;
+    font-size: 20px;
+}
+
+.contenedor-web {
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    min-height: calc(100vh - 225px) ;
+}
+
+
+// HEADER MENÚ
+
+header {
+    background-color: $fondo-elementos;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 20px;
+    
+    .logo {
+        color: $texto;
+        flex-grow: 2;
+}
+
+    .menu {
+        
+
+
+        .lista-menu {
+            list-style: none;
+
+
+            li {
+                float: left;
+                a {
+                    display: block;
+                    text-decoration: none;
+                    padding: 20px;
+                    color: rgba($texto, 0.7);
+
+                    &:hover {
+                        transition: 0.3s ease all;
+                        color: $texto;
+                }
+                }
+            }
+
+        }
+    }
+
+    .modos {
+
+    }
+}
+
+
+// MAIN CUERPO
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    .tarjeta {
+        background-color: $fondo-elementos;
+        border-radius: 10px;
+        width: 32%;
+        min-width: 300px;
+        margin-top: 90px;
+        min-height: 210px;       
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+
+
+        .img-tarjeta {
+            position: absolute;
+            width: 100%;
+            top: -50px;
+            text-align: center;
+            
+            img {
+                width: calc(100% - 40px);
+                border-radius: 15px;
+                object-fit: cover;
+                box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+
+            }
+        }
+
+        .botonera {            
+            width: calc(100% - 40px);
+            display: flex;
+            justify-content: space-between;
+            
+            
+            .btn {
+                cursor: pointer;
+                border-radius: 4px;
+                padding: 12px 0;
+                width: 48%;
+                color: $btn-texto;
+                border: none;    
+                margin-bottom: 18px;
+                font-size: 16px;
+                    
+                &.comprar {
+                    background-color: $btn-principal;
+                    
+                    &:hover {
+                        transition: 0.3s ease all;
+                        background-color: $btn-principalHover;
+                    }
+                }
+        
+                &.ver {
+                    background-color: $btn-secundario;
+                    
+                    &:hover {
+                        transition: 0.3s ease all;
+                        background-color: $btn-secundarioHover;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+
+}
+
+
+// FOOTER
+
+footer {
+    background-color: #000;
+    color: #fff;
+    padding-top: 25px;
+    padding-bottom: 50px;
+
+    .flex-footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding: 0 60px;
+
+        .nombre {
+
+            h3 {
+                font-size: 16px;
+                margin: 0;
+                padding: 0 20px;
+                line-height: 40px;                
+            }
+        }
+
+        .redes {
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+    
+                li {
+                    float: left;
+    
+                    a {
+                        list-style: none;
+                        text-decoration: none;
+                        color: #ccc;
+                        display: block;
+                        padding: 0 20px;
+                        line-height: 40px;
+    
+                        &:hover {
+                            color: #eee;                        
+                        }
+                    }
+    
+    
+                }
+            }
+        }
+    }
+
+
+}
